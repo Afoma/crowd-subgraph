@@ -14,50 +14,11 @@ dataSources:
       apiVersion: 0.0.7
       language: wasm/assemblyscript
       entities:
-        - AllowedSeaDropUpdated
-        - Approval
-        - ApprovalForAll
-        - BaseURIUpdated
-        - ConsecutiveTransfer
-        - ContractURIUpdated
-        - MaxSupplyUpdated
-        - OwnershipTransferred
-        - PotentialOwnerUpdated
-        - ProvenanceHashUpdated
-        - RoyaltyInfoUpdated
-        - SeaDropTokenDeployed
-        - TokenURIUpdated
         - Transfer
       abis:
         - name: Contract
           file: ./abis/Contract.json
       eventHandlers:
-        - event: AllowedSeaDropUpdated(address[])
-          handler: handleAllowedSeaDropUpdated
-        - event: Approval(indexed address,indexed address,indexed uint256)
-          handler: handleApproval
-        - event: ApprovalForAll(indexed address,indexed address,bool)
-          handler: handleApprovalForAll
-        - event: BaseURIUpdated(string)
-          handler: handleBaseURIUpdated
-        - event: ConsecutiveTransfer(indexed uint256,uint256,indexed address,indexed address)
-          handler: handleConsecutiveTransfer
-        - event: ContractURIUpdated(string)
-          handler: handleContractURIUpdated
-        - event: MaxSupplyUpdated(uint256)
-          handler: handleMaxSupplyUpdated
-        - event: OwnershipTransferred(indexed address,indexed address)
-          handler: handleOwnershipTransferred
-        - event: PotentialOwnerUpdated(address)
-          handler: handlePotentialOwnerUpdated
-        - event: ProvenanceHashUpdated(bytes32,bytes32)
-          handler: handleProvenanceHashUpdated
-        - event: RoyaltyInfoUpdated(address,uint256)
-          handler: handleRoyaltyInfoUpdated
-        - event: SeaDropTokenDeployed()
-          handler: handleSeaDropTokenDeployed
-        - event: TokenURIUpdated(indexed uint256,indexed uint256)
-          handler: handleTokenURIUpdated
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
       file: ./src/contract.ts
