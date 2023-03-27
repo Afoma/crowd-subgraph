@@ -1,5 +1,5 @@
-import { Transfer } from "../generated/Contract/Contract"
-import { TransferEvent } from "../generated/schema"
+import {Transfer } from "../generated/Contract/Contract"
+import {TransferEvent } from "../generated/Schema"
 
 export function handleTransferEvent(event: Transfer): void {
   let transferEvent = new TransferEvent(

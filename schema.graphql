@@ -1,50 +1,21 @@
-type Pregnant @entity(immutable: true) {
-  id: Bytes!
-  owner: Bytes! # address
-  matronId: BigInt! # uint256
-  sireId: BigInt! # uint256
-  cooldownEndBlock: BigInt! # uint256
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
+type TransferEvent @entity {
+id: ID!
 
-type Transfer @entity(immutable: true) {
-  id: Bytes!
-  from: Bytes! # address
-  to: Bytes! # address
-  tokenId: BigInt! # uint256
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
+" Quantity of tokens transferred "
+amount: BigDecimal!
 
-type Approval @entity(immutable: true) {
-  id: Bytes!
-  owner: Bytes! # address
-  approved: Bytes! # address
-  tokenId: BigInt! # uint256
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
+" Transaction sender address "
+sender: Bytes!
 
-type Birth @entity(immutable: true) {
-  id: Bytes!
-  owner: Bytes! # address
-  kittyId: BigInt! # uint256
-  matronId: BigInt! # uint256
-  sireId: BigInt! # uint256
-  genes: BigInt! # uint256
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
-}
+" Address of destination account "
+destination: Bytes!
 
-type ContractUpgrade @entity(immutable: true) {
-  id: Bytes!
-  newContract: Bytes! # address
-  blockNumber: BigInt!
-  blockTimestamp: BigInt!
-  transactionHash: Bytes!
+" Block number "
+block: BigInt!
+
+" Event timestamp "
+timestamp: BigInt!
+
+" Transaction hash "
+transaction: Bytes!
 }
