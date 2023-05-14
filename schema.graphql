@@ -19,3 +19,5 @@ type TransferEvent @entity {
   " Transaction hash "
   transaction: Bytes!
 }
+
+# newly defined schema
