@@ -13,7 +13,8 @@ import { TransferEvent } from "../generated/schema"
       event.transaction.hash.toHexString() + "-" 
       + event.transactionLogIndex.toString()
       )
-    let amount = (event.params.value.toBigDecimal())
+      // previously    let amount = (event.params.value.toBigDecimal())
+    let amount = (event.params.tokenId.toBigDecimal())
     transferEvent.amount = amount
     transferEvent.sender = event.params.from
     transferEvent.destination = event.params.to
