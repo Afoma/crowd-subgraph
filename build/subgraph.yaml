@@ -1,0 +1,24 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Contract
+    network: mainnet
+    source:
+      address: "0xaA7200ee500dE2dcde75E996De83CBD73BCa9705"
+      abi: Contract
+      startBlock: 16650266
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Transfer
+      abis:
+        - name: Contract
+          file: Contract\abis\Contract.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: Contract\Contract.wasm

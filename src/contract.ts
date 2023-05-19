@@ -1,7 +1,7 @@
 import { Transfer } from "../generated/Contract/Contract"
 import { TransferEvent } from "../generated/schema"
 
-  export function handleTransferEvent(event: Transfer): void {
+  export function handleTransfer(event: Transfer): void {
     let transferEvent = new TransferEvent(
       // if we were indexing a token we would have used 
       // only the transaction's hash to successfully form a unique id
@@ -25,4 +25,3 @@ import { TransferEvent } from "../generated/schema"
   transferEvent.save()
   }
   
-
